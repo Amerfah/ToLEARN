@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ToLEARN Website - Kontak</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a class="navbar-brand" href="index.html"><img src="./asset/ToLearn.png" alt="ToLEARN logo"></a>
+        <ul class="navbar-nav">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="about.html">Tentang</a></li>
+            <li><a href="courses.html">Jelajah</a></li>
+            <li><a href="contact.html" class="active">Kontak</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger-menu">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </button>
+        <div class="search">
+            <input type="text" class="searchTerm" placeholder="Apa yang ingin kamu cari?">
+            <button type="submit" class="searchButton">
+                <img src="./asset/search_small.png" alt="search">
+            </button>
+        </div>
+    </nav>
+    <main class="container">
+        <section class="contact-section">
+            <h2>Kontak Kami</h2>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <h2>Send Me a Message</h2>
+                    <form action="https://formspree.io/f/xoqgzpjz" method="post">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.735498767007!2d106.8180127740263!3d-6.298446561641634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed1aea2566fd%3A0xa43a768fbbbd72af!2sUniversitas%20Siber%20Asia%20(UNSIA)!5e0!3m2!1sen!2sid!4v1722181761173!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 ToLearn</p>
+    </footer>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

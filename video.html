@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToLEARN Website - Pemutaran Video</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a class="navbar-brand" href="index.html"><img src="./asset/ToLearn.png" alt="ToLEARN logo"></a>
+        <ul class="navbar-nav">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="about.html">Tentang</a></li>
+            <li><a href="courses.html" class="active">Jelajah</a></li>
+            <li><a href="contact.html">Kontak</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger-menu">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </button>
+        <div class="search">
+            <input type="text" class="searchTerm" placeholder="Apa yang ingin kamu cari?">
+            <button type="submit" class="searchButton">
+                <img src="./asset/search_small.png" alt="search">
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1 id="videoTitle">Video Playback</h1>
+        <div class="video-container">
+            <iframe id="videoFrame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 ToLearn</p>
+    </footer>
+    <script>
+        // Get video ID from URL parameters
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Set the video title and source
+        document.addEventListener('DOMContentLoaded', () => {
+            const videoId = getParameterByName('videoId');
+            const videoTitle = getParameterByName('title');
+            if (videoId) {
+                const videoFrame = document.getElementById('videoFrame');
+                videoFrame.src = `https://www.youtube.com/embed/${videoId}`;
+            }
+            if (videoTitle) {
+                document.getElementById('videoTitle').innerText = videoTitle;
+            }
+        });
+    </script>
+</body>
+</html>

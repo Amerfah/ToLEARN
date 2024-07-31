@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToLEARN Website - Beranda</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a class="navbar-brand" href="index.html"><img src="./asset/ToLearn.png" alt="ToLEARN logo"></a>
+        <ul class="navbar-nav">
+            <li><a href="index.html" class="active">Beranda</a></li>
+            <li><a href="about.html">Tentang</a></li>
+            <li><a href="courses.html">Jelajah</a></li>
+            <li><a href="contact.html">Kontak</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger-menu">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </button>
+        <div class="search">
+            <input type="text" class="searchTerm" placeholder="Apa yang ingin kamu cari?">
+            <button type="submit" class="searchButton">
+                <img src="./asset/search_small.png" alt="search">
+            </button>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <header class="banner">
+        <h1>Selamat datang di To<span>LEARN</span></h1>
+        <h3>Sudah belajar apa hari ini? Ayo Cari Tahu Yang Belum Kita Ketahui!</h3>
+        <div class="wrap">
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="Apa yang ingin kamu cari?">
+                <button type="submit" class="searchButton">
+                    <img src="./asset/search_small.png" alt="search">
+                </button>
+            </div>
+        </div>
+        <a href="courses.html" class="btn" id="btnjelajah">Jelajah</a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h2>Fitur Unggulan</h2>
+        <h3>Bahasa pemrograman yang populer digunakan</h3>
+        <table class="clstabel" cellpadding="10" cellspacing="0">
+            <tr>
+                <th>
+                    <a href="https://www.w3schools.com/js/" target="_blank"><img src="asset/javascript.png" alt="JavaScript" height="70%"/></a>
+                </th>
+                <th>
+                    <a href="https://www.w3schools.com/php/" target="_blank"><img src="asset/php.png" alt="PHP" height="70%"/></a>
+                </th>
+                <th>
+                    <a href="https://www.w3schools.com/python/" target="_blank"><img src="asset/python.png" alt="Python" height="70%" /></a>
+                </th>
+            </tr>
+        </table>
+        <h3>Video Paling Sering Dicari</h3>
+        <div class="card-grid" id="featuredCourses">
+            <!-- Videos akan di inject disini oleh JavaScript -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 ToLearn</p>
+    </footer>
+    <script>
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const videoId = getParameterByName('videoId');
+            if (videoId) {
+                const videoFrame = document.getElementById('videoFrame');
+                videoFrame.src = `https://www.youtube.com/embed/${videoId}`;
+            }
+        });
+    </script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
